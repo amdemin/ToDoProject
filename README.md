@@ -1,5 +1,6 @@
 # Hello :grinning:
 ## This simple project allows you to manage tasks as well as generate a random password!
+## Check out the website: https://amdemin.github.io/ToDoProject/index.html
 
 <!-- It is hosted on PaaS Heroku.
 
