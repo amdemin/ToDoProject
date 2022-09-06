@@ -268,6 +268,10 @@ body .lock {
   color: #6997fa;
 }
 
+.title__short {
+  display: none;
+}
+
 @media (max-width: 818px) {
   body .lock {
     overflow: hidden;
@@ -335,5 +339,68 @@ body .lock {
   }
   .header__list li {
     margin: 0px 0px 20px 0px;
+  }
+}
+@media (max-width: 576px) {
+  .content__title p {
+    position: relative;
+    bottom: 5px;
+    padding: 0px 10px 0px 0px;
+    margin: 0px 0px 0px 0px;
+  }
+  .content__input {
+    margin: 0px 0px 0px 0px;
+    padding: 5px 0px;
+    display: flex;
+    justify-content: space-around;
+    font-size: 15px;
+  }
+  .content__input input {
+    margin: 0px 0px 0px 10px;
+    padding: 0px 0px 0px 5px;
+    border: 2px solid rgb(173, 173, 222);
+    height: 50px;
+    width: 80%;
+  }
+  .tasks__list {
+    margin: 0px 0px 30px 0px;
+    padding: 0px 0px 0px 0px;
+  }
+  .tasks__list li {
+    min-height: 50px;
+    max-width: 100%;
+    word-wrap: break-word;
+    background-color: #6997fa;
+    border-radius: 50px;
+    margin: 10px 0px 0px 0px;
+    padding: 10px 80px 10px 25px;
+    color: #fff;
+    font-size: 22px;
+    transition: 0.2s;
+    position: relative;
+  }
+  .tasks__list li:first-child {
+    margin: 0px 0px 0px 0px;
+  }
+  .tasks__list li.checked {
+    background: lightgreen;
+    text-decoration: line-through;
+    transition: 0.2s;
+  }
+  .tasks__list li .fa-check {
+    position: absolute;
+    right: 45px;
+    top: 15px;
+  }
+  .tasks__list li .fa-trash {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+  }
+  .title__full {
+    display: none;
+  }
+  .title__short {
+    display: inline-block;
   }
 }

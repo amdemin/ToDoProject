@@ -246,6 +246,10 @@ body .lock {
     color: #6997fa;
 }
 
+.title__short {
+    display: none;
+}
+
 
 
 // адаптивный дизайн
@@ -350,4 +354,99 @@ body .lock {
             }
         }
     }
+}
+
+
+
+@media (max-width: 576px) {
+    
+    .content {
+
+        &__title {
+           p {
+            position: relative;
+            bottom: 5px;
+            padding: 0px 10px 0px 0px;
+            margin: 0px 0px 0px 0px;
+           }
+        }
+
+        &__input {
+            margin: 0px 0px 0px 0px;
+            padding: 5px 0px;
+            //border: 2px dashed blue;
+            display: flex;
+            justify-content: space-around;
+            font-size: 15px;
+            input {
+                margin: 0px 0px 0px 10px;
+                padding: 0px 0px 0px 5px;
+                border: 2px solid rgb(173, 173, 222);
+                height: 50px;
+                width: 80%;
+            }
+        }
+    
+
+    }
+    
+    .tasks {
+
+        &__list {
+    
+            margin: 0px 0px 30px 0px;
+            padding: 0px 0px 0px 0px;
+    
+            li {
+    
+                &:first-child {
+                    margin: 0px 0px 0px 0px;
+                }
+                
+                min-height: 50px;
+                max-width: 100%;
+                // break the large string to fit it
+                word-wrap: break-word;
+    
+                background-color: #6997fa;
+                border-radius: 50px;
+                // width: 100%;
+                margin: 10px 0px 0px 0px;
+                padding: 10px 80px 10px 25px;
+                color:#fff;
+                font-size: 22px;
+                transition: .2s;
+                position: relative;
+    
+                &.checked {
+                    background: lightgreen;
+                    text-decoration: line-through;
+                    transition: .2s;
+                }
+    
+                & .fa-check {
+                    position: absolute;
+                    right: 45px;
+                    top: 15px;
+                }
+    
+                & .fa-trash {
+                    position: absolute;
+                    right: 15px;
+                    top: 15px;
+                }
+            }
+        }
+    
+    }
+
+
+    // switch titles to fit it inside small screens
+    .title__full {
+        display: none;
+    }
+    .title__short {
+        display: inline-block;
+    }
+
 }
