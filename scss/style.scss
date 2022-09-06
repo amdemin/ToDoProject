@@ -1,0 +1,353 @@
+@import "_obnull.scss";
+@import url('https://fonts.googleapis.com/css?family=Splash&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+html, body {
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    //background-color: #808080;
+}
+
+
+// this's used to fix text, while clicking on the burger (don't make it return back to the beginning)
+body .lock {
+    overflow: hidden;
+}
+
+
+.wrapper {
+    min-height: 100%;
+    display: grid;
+    // set header, main and footer sizes
+    grid-template: minmax(100px, auto) 1fr minmax(70px, auto) / 1fr;
+    grid-template-areas: 
+        "header"
+        "main"
+        "footer";
+}
+
+.container {
+    max-width: 1180px;
+    // to align text in the center
+    margin: 0px auto;
+    padding: 0px 10px;
+}
+
+.header {
+    position: fixed;
+    z-index: 50;
+    grid-area: header;
+    background-color: #2d3cf9;
+    padding: 0px 10% 0px 5%;
+    width: 100%;
+    // creating a shadow under the header
+    box-shadow: 0 1px 5px rgb(88, 75, 75);
+
+    &__body {
+        min-height: 100px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__left, &__right {
+        min-height: 100px;
+        display: flex;
+        align-items: center;
+    }
+
+    &__logo {
+        img {
+            max-width: 50px;
+            transition: all 1s ease 0s;
+            &:hover {
+                transform: rotate(-180deg);
+                transition: all 1s ease 0s;
+            }
+        }
+
+        span {
+            display: inline-block;
+            padding: 5px 0px 0px 15px;
+            font-size: 35px;
+            letter-spacing: 0.7px;
+            color: #fff;
+            font-family: "Splash";
+            transition: all 1s ease 0s;
+            &:hover {
+                padding: 0px 0px 0px 15px;
+                transition: all 1s ease 0s;
+            }
+        }
+    }
+
+    &__list {
+        display: flex;
+        li {
+            margin: 0px 0px 0px 15px;
+        }
+    }
+
+    &__link {
+        color:#fff;
+        font-size: 17px;
+        &:hover {
+            color: rgb(181, 178, 178);
+        }
+    }
+
+    &__burger {
+        display: none;
+    }
+
+
+}
+
+.main {
+    grid-area: main;
+}
+
+.content {
+    margin: 50px 0px 0px 0px;
+    color: #5f6ce9;
+    font-size: 25px;
+
+    &__title {
+        padding: 10px 15px;
+        display: flex;
+        justify-content: center;
+
+        p {
+            font-family: 'Roboto';
+        }
+
+        span {
+            display: none;
+            margin: 0px 0px 0px 10px;
+            padding: 3px 10px 0px 10px;
+            position: relative;
+            bottom: 10px;
+            color: #fff;
+            border-radius: 50%;
+            background-color: #6997fa;
+            height: 32px;
+        }
+    }
+
+    &__input {
+        margin: 25px 0px 0px 0px;
+        padding: 10px 0px;
+        //border: 2px dashed blue;
+        display: flex;
+        justify-content: space-around;
+        font-size: 15px;
+        input {
+            margin: 0px 0px 0px 10px;
+            padding: 0px 0px 0px 10px;
+            border: 2px solid rgb(173, 173, 222);
+            height: 40px;
+            width: 50%;
+        }
+    }
+
+    &__tasks {
+        margin: 15px 0px 0px 0px;
+        padding: 10px 0px 0px 25px;
+    }
+}
+
+
+.tasks {
+
+    &__list {
+
+        margin: 0px 0px 30px 0px;
+
+        li {
+
+            &:first-child {
+                margin: 0px 0px 0px 0px;
+            }
+            
+            min-height: 50px;
+            max-width: 100%;
+            // break the large string to fit it
+            word-wrap: break-word;
+
+            background-color: #6997fa;
+            border-radius: 50px;
+            // width: 100%;
+            margin: 10px 0px 0px 0px;
+            padding: 10px 80px 10px 25px;
+            color:#fff;
+            font-size: 22px;
+            transition: .2s;
+            position: relative;
+
+            &.checked {
+                background: lightgreen;
+                text-decoration: line-through;
+                transition: .2s;
+            }
+
+            & .fa-check {
+                position: absolute;
+                right: 45px;
+                top: 15px;
+            }
+
+            & .fa-trash {
+                position: absolute;
+                right: 15px;
+                top: 15px;
+            }
+        }
+    }
+
+}
+
+
+.footer {
+    grid-area: footer;
+    color: rgb(247, 242, 242);
+    background-color: rgb(139, 139, 139);
+    padding: 15px 0px 0px 0px;
+
+    &__title {
+        padding: 0px 0px 5px 0px;
+        display: flex;
+        justify-content: end;
+    }
+
+    &__about {
+        display: flex;
+        justify-content: end;
+    }
+}
+
+// ICONS and other small stuff
+.fas {
+
+    margin: 0px 0px 0px 5px;
+
+    &.fa-check {
+        color:#09ff4f;
+    }
+
+    &.fa-trash {
+        color:#ff0000;
+    }
+
+}
+
+#title__slash {
+    display: none;
+    background: none;
+    color: #6997fa;
+}
+
+
+
+// адаптивный дизайн
+@media (max-width: 818px) {
+
+    // this's used to fix text, while clicking on the burger (don't make it return back to the beginning)
+    body .lock {
+        overflow: hidden;
+    }
+    
+    .header {
+
+        &__body {
+            height: 50px;
+        }
+
+        /// START OF BURGER ICON DESIGN
+        // design of burger using three lines (:before, span and :after)
+        &__burger {
+            display: block;
+            position: relative;
+            width: 30px;
+            height: 20px;
+            z-index: 3;
+            
+
+            // middle line
+            span {
+                position: absolute;
+                background-color: #fff;
+                left: 0;
+                width: 100%;
+                height: 2px;
+                top: 9px;
+                // animation
+                transition: all 0.3s ease 0s;
+            }
+            // common attributes for top and bottom lines
+            &:before, &:after {
+                content: "";
+                background-color: #fff;
+                position: absolute;
+                width: 100%;
+                height: 2px;
+                left: 0;
+            }
+            // top line
+            &:before {
+                top: 0;
+            }
+            // bottom line
+            &:after {
+                bottom: 0;
+            }
+            
+            // transform burger icon into cross, while clicking
+            
+            // top line
+            &.active:before {
+                transform: rotate(45deg);
+                top: 9px;
+            }
+            // middle line
+            &.active span {
+                transform: scale(0);
+            }
+            // bottom line
+            &.active:after {
+                transform: rotate(-45deg);
+                bottom: 9px;
+            }            
+        }
+        /// END OF BURGER ICON DESIGN
+
+
+        &__menu {
+            position: fixed;
+            // указываем -100%, чтобы спрятать меню изначально
+            top: -100%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            // позволяем скроллить список, если выходит за рамки экрана
+            overflow: auto;
+            background-color: #18b5a5;
+            // animation
+            transition: all 0.3s ease 0s;
+            // внутренний отступ от шапки
+            padding: 70px 0px 20px 10px;
+
+            &.active {
+                // указываем 0, чтобы вернуть скрытое меню
+                top: 0;
+            }
+        }
+
+        // показываем элементы листа блочно
+        &__list {
+            display: block;
+            li {
+                margin: 0px 0px 20px 0px;
+            }
+        }
+    }
+}
